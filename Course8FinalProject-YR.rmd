@@ -89,13 +89,13 @@ Accuracy of Model
 confusionMatrix(rp_predict, splitNVtest$classe)$overall['Accuracy']
 ```
 
-###Random Forecast
-Run rpart model
+###Random Forests
+Run random forests model
 ```{r}
 rf_model <- randomForest(classe ~. , data=splitNVtrain)
 ```
 
-Predicting based on rpart model
+Predicting based on random forests model
 ```{r}
 rf_predict <- predict(rf_model, splitNVtest)
 ```
