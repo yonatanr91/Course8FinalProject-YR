@@ -194,11 +194,11 @@ splitNVtest &lt;- trainNV[-Partition,]</code></pre>
 <pre><code>##  Accuracy 
 ## 0.6617047</code></pre>
 </div>
-<div id="random-forecast" class="section level3">
-<h3>Random Forecast</h3>
-<p>Run rpart model</p>
+<div id="random-forests" class="section level3">
+<h3>Random Forests</h3>
+<p>Run random forests model</p>
 <pre class="r"><code>rf_model &lt;- randomForest(classe ~. , data=splitNVtrain)</code></pre>
-<p>Predicting based on rpart model</p>
+<p>Predicting based on random forests model</p>
 <pre class="r"><code>rf_predict &lt;- predict(rf_model, splitNVtest)</code></pre>
 <p>Accuracy of Model</p>
 <pre class="r"><code>confusionMatrix(rf_predict, splitNVtest$classe)$overall['Accuracy']</code></pre>
